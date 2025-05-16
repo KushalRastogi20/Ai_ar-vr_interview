@@ -3,6 +3,10 @@
 import { motion } from 'framer-motion';
 
 export default function Hero() {
+  const handleClick = () => {
+    window.location.href = '/customer/products';
+  };
+
   return (
     <section className="relative h-screen flex items-center overflow-hidden">
       {/* Background image */}
@@ -45,14 +49,15 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#"
+              onClick={handleClick}
               className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium text-center hover:bg-blue-700 transition-colors"
             >
               Shop Now
-            </motion.a>
+            </motion.button>
+
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
